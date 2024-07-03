@@ -22,12 +22,12 @@ export const BlogPost: React.FC<BlogPostProps> = ({ post }) => {
       variants={fadeInUp}
       layout
     >
-      <div className="w-full h-48 object-cover">
+      <div className="relative w-full h-48">
         <Image
           src={post.image}
           alt={post.title}
-          layout="fill"
-          objectFit="cover"
+          fill
+          className="object-cover"
         />
       </div>
 
