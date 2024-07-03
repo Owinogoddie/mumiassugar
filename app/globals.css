@@ -2,20 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@keyframes slow-heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
   }
 }
 
+.animate-slow-heartbeat {
+  animation: slow-heartbeat 3s ease-in-out infinite;
+}
+.text-shadow-lg {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.text-shadow-md {
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
