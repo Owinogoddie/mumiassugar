@@ -4,7 +4,7 @@ import { Product } from "@/types";
 import { products } from "@/data/products";
 import Image from "next/image";
 
-interface ProductComparisonToolProps {
+export interface ProductComparisonToolProps {
   isOpen: boolean;
   onClose: () => void;
 }
@@ -16,9 +16,11 @@ const ProductComparisonTool: React.FC<ProductComparisonToolProps> = ({
   const [selectedProducts, setSelectedProducts] = useState<Product[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [isMobile, setIsMobile] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const productsPerPage = 6;
 
   useEffect(() => {
+    setIsMounted(true);
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
@@ -27,6 +29,10 @@ const ProductComparisonTool: React.FC<ProductComparisonToolProps> = ({
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  if (!isMounted) {
+    return null;
+  }
 
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;

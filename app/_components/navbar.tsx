@@ -23,10 +23,11 @@ const mainMenuItems: MenuItem[] = [
   { name: "Blog", href: "/blog" },
 ];
 
- const Navbar: React.FC = () => {
+const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isVisible, setIsVisible] = useState<boolean>(true);
   const [lastScrollY, setLastScrollY] = useState<number>(0);
+  const [isMounted, setIsMounted] = useState(false);
 
   const controlNavbar = useCallback(() => {
     if (typeof window !== "undefined") {
@@ -40,6 +41,7 @@ const mainMenuItems: MenuItem[] = [
   }, [lastScrollY]);
 
   useEffect(() => {
+    setIsMounted(true);
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", controlNavbar);
       return () => {
@@ -48,6 +50,9 @@ const mainMenuItems: MenuItem[] = [
     }
   }, [controlNavbar]);
 
+  if (!isMounted) {
+    return null;
+  }
   return (
     <motion.nav
       className="fixed w-full z-50"
@@ -141,4 +146,4 @@ const mainMenuItems: MenuItem[] = [
     </motion.nav>
   );
 };
-export default Navbar
+export default Navbar;

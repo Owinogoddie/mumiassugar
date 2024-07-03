@@ -1,69 +1,85 @@
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 
- const Hero = () => {
+const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 })
+  const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
-    const handleMouseMove = (e:any) => {
+    setIsMounted(true)
+    const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY })
     }
+
+    const handleResize = () => {
+      setWindowSize({ width: window.innerWidth, height: window.innerHeight })
+    }
+
+    handleResize() // Set initial size
     window.addEventListener('mousemove', handleMouseMove)
+    window.addEventListener('resize', handleResize)
+
     return () => {
       window.removeEventListener('mousemove', handleMouseMove)
+      window.removeEventListener('resize', handleResize)
     }
   }, [])
 
-  const calculateRotation = (x:any, y:any) => {
-    const centerX = window.innerWidth / 2
-    const centerY = window.innerHeight / 2
+  const calculateRotation = (x: number, y: number) => {
+    if (!isMounted) return 'none'
+    const centerX = windowSize.width / 2
+    const centerY = windowSize.height / 2
     const rotateX = -(y - centerY) / 50
     const rotateY = (x - centerX) / 50
     return `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
   }
 
+  if (!isMounted) {
+    return null
+  }
   return (
-    <motion.div 
+    <motion.div
       className="relative h-screen flex items-center justify-center bg-gradient-to-br from-primary via-accent-blue to-secondary overflow-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <motion.div 
+      <motion.div
         className="absolute inset-0 bg-black opacity-50"
         animate={{
           backgroundPosition: [
-            '0% 0%',
-            '100% 100%',
-            '0% 100%',
-            '100% 0%',
-            '0% 0%'
-          ]
+            "0% 0%",
+            "100% 100%",
+            "0% 100%",
+            "100% 0%",
+            "0% 0%",
+          ],
         }}
         transition={{
           duration: 20,
           ease: "linear",
-          repeat: Infinity
+          repeat: Infinity,
         }}
       />
       <div className="container mx-auto px-4 text-center relative z-10">
-        <motion.h1 
+        <motion.h1
           className="text-6xl md:text-8xl font-bold text-neutral-white mb-4"
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          transition={{ 
+          transition={{
             type: "spring",
             stiffness: 100,
             damping: 10,
-            delay: 0.5 
+            delay: 0.5,
           }}
           style={{
-            transform: calculateRotation(mousePosition.x, mousePosition.y)
+            transform: calculateRotation(mousePosition.x, mousePosition.y),
           }}
         >
           Sweet Excellence
         </motion.h1>
-        <motion.p 
+        <motion.p
           className="text-xl md:text-3xl text-neutral-white mb-8"
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -71,7 +87,7 @@ import { useState, useEffect } from 'react'
         >
           Kenya&apos;s Premier Sugar Producer
         </motion.p>
-        <motion.button 
+        <motion.button
           className="bg-accent-gold text-primary font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition-colors"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
@@ -91,7 +107,7 @@ import { useState, useEffect } from 'react'
         transition={{
           duration: 5,
           repeat: Infinity,
-          repeatType: "reverse"
+          repeatType: "reverse",
         }}
       />
       <motion.div
@@ -103,10 +119,11 @@ import { useState, useEffect } from 'react'
         transition={{
           duration: 5,
           repeat: Infinity,
-          repeatType: "reverse"
+          repeatType: "reverse",
         }}
       />
     </motion.div>
-  )
-}
+  );
+};
+
 export default Hero;
