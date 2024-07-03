@@ -1,6 +1,4 @@
 "use client";
-import { Navbar } from "./_components/navbar";
-import { Hero } from "./_components/hero";
 import { FeaturedProducts } from "./_components/featured-products";
 import { AboutSection } from "./_components/about-section";
 import { LatestNews } from "./_components/latest-news";
@@ -9,6 +7,9 @@ import ImageGalleryPreview from "./_components/image-galery-preview";
 import NewsletterSubscribe from "./_components/newsletter";
 import dynamic from "next/dynamic";
 
+import { Hero } from './_components/hero-wrapper';
+
+import { Navbar } from "./_components/navbar-wrapper";
 const AnimatedSection = dynamic(
   () => import("./_components/animated-section"),
   { ssr: false }

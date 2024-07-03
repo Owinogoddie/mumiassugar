@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Navbar } from "../_components/navbar";
+import { Navbar } from "../_components/navbar-wrapper";
 import { Footer } from "../_components/footer";
 import Link from "next/link";
 import { ContactHero } from "./contact-hero";

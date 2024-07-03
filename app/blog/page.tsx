@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Variants, motion } from "framer-motion";
 import { blogPosts, BlogPost } from "@/data/blog-posts";
-import { Navbar } from "../_components/navbar";
+import { Navbar } from "../_components/navbar-wrapper";
 import { SearchBar } from "./_components/search-bar";
 import { CategoryFilter } from "./_components/category-filter";
 import { BlogGrid } from "./_components/blog-grid";

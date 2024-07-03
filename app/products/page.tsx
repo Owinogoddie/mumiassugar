@@ -1,14 +1,14 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Navbar } from '../_components/navbar';
+import { Navbar } from '../_components/navbar-wrapper';
 import { Footer } from '../_components/footer';
 import { Product, Category } from '@/types';
 import { products } from '@/data/products';
 import { Hero } from './_components/products-hero';
 import { ProductSearch } from './_components/product-search';
 import { ProductModal } from './_components/product-modal';
-import { ProductComparisonTool } from './_components/product-comparison';
+import { ProductComparisonTool } from './_components/product-comparison-wrapper';
 import { QuickViewTooltip } from './_components/quick-view-tooltip';
 import { CartModal } from './_components/cart-modal';
 import { WhyChooseUs } from './_components/why-choose-us';

@@ -23,7 +23,7 @@ const mainMenuItems: MenuItem[] = [
   { name: "Blog", href: "/blog" },
 ];
 
-export const Navbar: React.FC = () => {
+ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isVisible, setIsVisible] = useState<boolean>(true);
   const [lastScrollY, setLastScrollY] = useState<number>(0);
@@ -141,3 +141,4 @@ export const Navbar: React.FC = () => {
     </motion.nav>
   );
 };
+export default Navbar

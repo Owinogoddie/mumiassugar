@@ -9,7 +9,7 @@ interface ProductComparisonToolProps {
   onClose: () => void;
 }
 
-export const ProductComparisonTool: React.FC<ProductComparisonToolProps> = ({
+const ProductComparisonTool: React.FC<ProductComparisonToolProps> = ({
   isOpen,
   onClose,
 }) => {
@@ -281,3 +281,4 @@ export const ProductComparisonTool: React.FC<ProductComparisonToolProps> = ({
     </AnimatePresence>
   );
 };
+export default ProductComparisonTool;

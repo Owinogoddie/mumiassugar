@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 
-export const Hero = () => {
+ const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
 
   useEffect(() => {
@@ -109,3 +109,4 @@ export const Hero = () => {
     </motion.div>
   )
 }
+export default Hero;

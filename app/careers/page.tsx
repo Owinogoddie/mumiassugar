@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Navbar } from "../_components/navbar";
+import { Navbar } from "../_components/navbar-wrapper";
 import { Footer } from "../_components/footer";
 import { CareersHero } from "./_components/careers-hero";
 import { JobOpenings } from "./_components/job-opennings";

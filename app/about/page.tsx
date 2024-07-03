@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Navbar } from "../_components/navbar";
+import { Navbar } from "../_components/navbar-wrapper";
 import { Timeline } from "./_components/timeline";
 import { Values } from "./_components/values";
 import { Team } from "./_components/team";

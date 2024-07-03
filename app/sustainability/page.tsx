@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Navbar } from "../_components/navbar";
+import { Navbar } from "../_components/navbar-wrapper";
 import { SustainabilityHero } from "./_components/sustainability-hero";
 import { EnvironmentalInitiatives } from "./_components/environmental-initiatives";
 import { CommunityImpact } from "./_components/community-impact";

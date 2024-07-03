@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Navbar } from "../_components/navbar";
+import { Navbar } from "../_components/navbar-wrapper";
 import { Footer } from "../_components/footer";
 import { InvestorHero } from "./_components/investors-hero";
 import { FinancialHighlights } from "./_components/financial-highlights";
