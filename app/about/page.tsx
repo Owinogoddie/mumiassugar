@@ -1,5 +1,4 @@
-'use client'
-import Head from "next/head";
+"use client";
 import { motion } from "framer-motion";
 import { Navbar } from "../_components/navbar";
 import { Timeline } from "./_components/timeline";
@@ -17,21 +16,14 @@ const fadeIn = {
 export default function About() {
   return (
     <div className="min-h-screen bg-neutral-white">
-      <Head>
-        <title>About Us - Mumias Sugar Company</title>
-        <meta
-          name="description"
-          content="Learn about Mumias Sugar Company's history, values, and team"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <Navbar />
 
       <main className="pt-32">
-      <div className="container mx-auto px-4 py-4">
+        <div className="container mx-auto px-4 py-4">
           <nav className="text-sm">
-            <Link href="/" className="text-primary hover:underline">Home</Link>
+            <Link href="/" className="text-primary hover:underline">
+              Home
+            </Link>
             <span className="mx-2">/</span>
             <span className="text-gray-500">About us</span>
           </nav>
@@ -54,8 +46,9 @@ export default function About() {
               {...fadeIn}
               transition={{ delay: 0.2 }}
             >
-              From humble beginnings to becoming Kenya&apos;s leading sugar producer,
-              Mumias Sugar Company has been sweetening lives since 1971.
+              From humble beginnings to becoming Kenya&apos;s leading sugar
+              producer, Mumias Sugar Company has been sweetening lives since
+              1971.
             </motion.p>
           </div>
         </motion.section>
@@ -84,10 +77,10 @@ export default function About() {
               {...fadeIn}
               transition={{ delay: 0.2 }}
             >
-              At Mumias Sugar Company, we&apos;re committed to sustainable farming
-              practices, community development, and producing the highest
-              quality sugar products. Our dedication to excellence drives
-              everything we do.
+              At Mumias Sugar Company, we&apos;re committed to sustainable
+              farming practices, community development, and producing the
+              highest quality sugar products. Our dedication to excellence
+              drives everything we do.
             </motion.p>
           </div>
         </motion.section>

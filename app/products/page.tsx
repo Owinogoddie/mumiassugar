@@ -1,6 +1,5 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import Head from 'next/head';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Navbar } from '../_components/navbar';
 import { Footer } from '../_components/footer';
@@ -72,11 +71,7 @@ export default function Products() {
 
   return (
     <div className="min-h-screen bg-neutral-white">
-      <Head>
-        <title>Products - Mumias Sugar Company</title>
-        <meta name="description" content="Explore our wide range of high-quality sugar products and by-products" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+     
 
       <Navbar />
 

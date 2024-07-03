@@ -1,41 +1,36 @@
-'use client'
-import Head from 'next/head'
-import { motion } from 'framer-motion'
-import { useState } from 'react'
-import { Navbar } from '../_components/navbar'
-import { Footer } from '../_components/footer'
-import Link from 'next/link'
-import { ContactHero } from './contact-hero'
-import { ContactForm } from './contact-form'
-import { ContactInfo } from './contact-info'
-import { OfficeLocations } from './office-locations'
-import { SocialMediaContacts } from './social-media'
-import { FAQSection } from './faq'
+"use client";
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { Navbar } from "../_components/navbar";
+import { Footer } from "../_components/footer";
+import Link from "next/link";
+import { ContactHero } from "./contact-hero";
+import { ContactForm } from "./contact-form";
+import { ContactInfo } from "./contact-info";
+import { OfficeLocations } from "./office-locations";
+import { SocialMediaContacts } from "./social-media";
+import { FAQSection } from "./faq";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 }
-}
+  transition: { duration: 0.6 },
+};
 
 export default function Contact() {
-  const [formSubmitted, setFormSubmitted] = useState(false)
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   return (
     <div className="min-h-screen bg-neutral-white">
-      <Head>
-        <title>Contact Us - Mumias Sugar Company</title>
-        <meta name="description" content="Get in touch with Mumias Sugar Company for inquiries, support, or partnerships" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <Navbar />
 
       <main className="pt-32">
         {/* Breadcrumb */}
         <div className="container mx-auto px-4 py-4">
           <nav className="text-sm">
-            <Link href="/" className="text-primary hover:underline">Home</Link>
+            <Link href="/" className="text-primary hover:underline">
+              Home
+            </Link>
             <span className="mx-2">/</span>
             <span className="text-gray-500">Contact Us</span>
           </nav>
@@ -59,7 +54,10 @@ export default function Contact() {
           >
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <h3 className="text-2xl font-bold mb-4">Thank You!</h3>
-              <p>Your message has been sent successfully. We&apos;ll get back to you soon.</p>
+              <p>
+                Your message has been sent successfully. We&apos;ll get back to
+                you soon.
+              </p>
               <button
                 className="mt-4 bg-primary text-white px-4 py-2 rounded"
                 onClick={() => setFormSubmitted(false)}
@@ -109,8 +107,10 @@ export default function Contact() {
               {...fadeIn}
               transition={{ delay: 0.2 }}
             >
-              Whether you have a question, feedback, or a business proposal, we&apos;re always eager to hear from you. 
-              Choose the method that suits you best, and we&apos;ll get back to you as soon as possible.
+              Whether you have a question, feedback, or a business proposal,
+              we&apos;re always eager to hear from you. Choose the method that
+              suits you best, and we&apos;ll get back to you as soon as
+              possible.
             </motion.p>
           </div>
         </motion.section>
@@ -118,5 +118,5 @@ export default function Contact() {
 
       <Footer />
     </div>
-  )
+  );
 }

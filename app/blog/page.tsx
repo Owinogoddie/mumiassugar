@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect } from "react";
-import Head from "next/head";
 import { Variants, motion } from "framer-motion";
 import { blogPosts, BlogPost } from "@/data/blog-posts";
 import { Navbar } from "../_components/navbar";
@@ -54,21 +53,14 @@ export default function Blog(): JSX.Element {
 
   return (
     <div className="min-h-screen bg-neutral-white">
-      <Head>
-        <title>Blog - Mumias Sugar Company</title>
-        <meta
-          name="description"
-          content="Stay updated with the latest news, insights, and stories from Mumias Sugar Company"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <Navbar />
 
       <main className="pt-32 pb-20">
-      <div className="container mx-auto px-4 py-4">
+        <div className="container mx-auto px-4 py-4">
           <nav className="text-sm">
-            <Link href="/" className="text-primary hover:underline">Home</Link>
+            <Link href="/" className="text-primary hover:underline">
+              Home
+            </Link>
             <span className="mx-2">/</span>
             <span className="text-gray-500">Blog</span>
           </nav>

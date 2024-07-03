@@ -1,5 +1,4 @@
 "use client";
-import Head from "next/head";
 import { motion } from "framer-motion";
 import { Navbar } from "../_components/navbar";
 import { Footer } from "../_components/footer";
@@ -22,15 +21,6 @@ const fadeIn = {
 export default function NewsAndMedia() {
   return (
     <div className="min-h-screen bg-neutral-white">
-      <Head>
-        <title>News & Media - Mumias Sugar Company</title>
-        <meta
-          name="description"
-          content="Stay updated with the latest news, press releases, and media from Mumias Sugar Company"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <Navbar />
 
       <main className="pt-32">
@@ -77,21 +67,18 @@ export default function NewsAndMedia() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
-              {socialMediaPlatforms.map(
-                (platform) => (
-                  <motion.a
-                  
-                    key={platform.name}
-                    href={platform.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    {platform.icon}
-                  </motion.a>
-                )
-              )}
+              {socialMediaPlatforms.map((platform) => (
+                <motion.a
+                  key={platform.name}
+                  href={platform.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  {platform.icon}
+                </motion.a>
+              ))}
             </motion.div>
           </div>
         </motion.section>
